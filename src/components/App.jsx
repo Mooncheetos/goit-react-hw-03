@@ -6,7 +6,11 @@ import ContactList from "./ContactList/ContactList";
 import initContacts from "./Contact/contacts.json";
 
 function App() {
-  
+  const [contacts, setContacts] = useState([]);
+  const addContact = (newContact) => {
+    setContacts([...contacts, newContact]);
+   };
+  <ContactForm onSubmit={addContact} />
 
   return (
     <>
