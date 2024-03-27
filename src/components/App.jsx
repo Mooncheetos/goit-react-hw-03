@@ -25,25 +25,21 @@ function App() {
     });
   };
 
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-  };
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     localStorage.setItem("contactValue", JSON.stringify(contacts));
   }, [contacts]);
 
   const filteredContacts = contacts.filter((contact) => { 
-    return contact.name.toLowerCase().includes(searchTerm.toLowerCase());
+    return contact.name.toLowerCase().includes(filter.toLowerCase())
   });
 
   return (
     <div className="phoneBook-container">
       <h1 className="phoneBook-title">Phonebook</h1>
       <ContactForm onAdd={addContact} />
-      <SearchBox value={searchTerm} onValue={handleSearch} />
+      <SearchBox value={filter} onValue={setFilter} />
       <ContactList contacts={filteredContacts} onDelete={deleteContact} />
     </div>
   );

@@ -1,13 +1,13 @@
 import css from "./SearchBox.module.css";
 
-function SearchBox({value, onChange}) {
+function SearchBox({value, onAlter}) {
     return (
         <div className={css.searchWrap}>
-            <p className={css.searchTitle}></p>
+            <p className={css.searchTitle}>Find contacts name</p>
             <input className={css.searchInput}
                 type="text"
                 value={value}
-                onChange={(e) => onChange(e.target.value)}
+                onChange={(e) => onAlter(e.target.value)}
                     />
         </div>
     );
