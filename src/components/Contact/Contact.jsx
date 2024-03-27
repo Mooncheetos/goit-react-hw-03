@@ -12,4 +12,6 @@ function Contact ({ data: {id, name, number}, onDelete}) {
     );
 }
 
+
+
 export default Contact;
