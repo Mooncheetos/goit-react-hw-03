@@ -38,7 +38,7 @@ function App() {
     <div className="phoneBook-container">
       <h1 className="phoneBook-title">Phonebook</h1>
       <ContactForm onAdd={addContact} />
-      <SearchBox value={searchTerm} onValue={setSearchTerm} />
+      <SearchBox value={searchTerm} onAlter={setSearchTerm} />
       <ContactList contacts={filteredContacts} onDelete={deleteContact} />
     </div>
   );

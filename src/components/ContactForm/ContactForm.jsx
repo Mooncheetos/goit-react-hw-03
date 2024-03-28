@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid';
 import { useId } from "react";
 import css from './ContactForm.module.css';
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = ({ onAdd }) => {
     const initialValues = {
         name:'',
         number:'',
@@ -26,7 +26,7 @@ const ContactForm = ({ onSubmit }) => {
     const numberId = useId();
 
     const handleSubmit = (values, actions) => {
-        onSubmit({
+        onAdd({
             id: nanoid(),
             name: values.name,
             number: values.number,
